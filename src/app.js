@@ -17,4 +17,8 @@ import pairRouter from "./routes/pair.routes.js";
 
 app.use("/api/v1", pairRouter);
 
+app.get("/", (req, res) => {
+  res.send("ScaleX Backend task");
+});
+
 export { app };
