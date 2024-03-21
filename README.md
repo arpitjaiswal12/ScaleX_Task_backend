@@ -21,12 +21,12 @@ The Pair Price and Volume API offers a RESTful interface for managing price and 
 Provide instructions on how to install and set up your project locally. Include any prerequisites and steps necessary to get the project up and running.
 
 # Clone the repository
-git clone https://github.com/your/repository.git
+git clone [https://github.com/your/repository.git](https://github.com/arpitjaiswal12/ScaleX_Task_backend.git)
 
 # Install dependencies
 npm install
 
-# start Server 
+# Start Server 
 npm run dev
 
 ## API Endpoints
