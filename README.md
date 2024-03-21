@@ -34,6 +34,5 @@ List and describe the available API endpoints, along with their functionality an
 
 - GET /api/v1/get/pairs: Retrieve all pairs from the database.
 - POST /api/v1/create/pair: Create a new pair.
-- GET /api/v1/get/pair/:pairID: Retrieve a specific pair by ID.
 - PUT /api/v1/upadate/:pairID: Update a specific pair.
 - DELETE /api/v1/delete/:pairID: Delete a specific pair.
