@@ -30,9 +30,11 @@ npm install
 npm run dev
 
 ## API Endpoints
-List and describe the available API endpoints, along with their functionality and any required parameters.
+List and describe the available API endpoints, along with their functionality and any required parameters. </br>
+{{SERVER}} :: http://localhost:8000/ or hosted server url 
 
-- **GET** /api/v1/get/pairs: Retrieve all pairs from the database. (This endpoint retrieves all pairs stored in the database. It allows clients to fetch the entire list of trading pairs )
-- **POST** /api/v1/create/pair: Create a new pair. (This endpoint creates a new pair in the database. Clients can use this endpoint to add a new trading pair)
-- **PUT** /api/v1/upadate/:pairID: Update a specific pair. (This endpoint updates a specific pair in the database based on its ID. Clients can use this endpoint to modify the price and volume data of an existing trading pair.)
-- **DELETE** /api/v1/delete/:pairID: Delete a specific pair. (This endpoint deletes a specific pair from the database based on its ID. Clients can use this endpoint to remove a trading pair that is no longer needed.)
+- **GET** {{SERVER}}/api/v1/get/pairs : Retrieve all pairs from the database. (This endpoint retrieves all pairs stored in the database. It allows clients to fetch the entire list of trading pairs )
+- **GET** {{SERVER}}/get-price-volume/:pairID : fetch price and  volume data from Pair dataset 
+- **POST** {{SERVER}}/api/v1/create/pair : Create a new pair. (This endpoint creates a new pair in the database. Clients can use this endpoint to add a new trading pair)
+- **PUT** {{SERVER}}/api/v1/upadate/:pairID : Update a specific pair. (This endpoint updates a specific pair in the database based on its ID. Clients can use this endpoint to modify the price and volume data of an existing trading pair.)
+- **DELETE** {{SERVER}}/api/v1/delete/:pairID : Delete a specific pair. (This endpoint deletes a specific pair from the database based on its ID. Clients can use this endpoint to remove a trading pair that is no longer needed.)
