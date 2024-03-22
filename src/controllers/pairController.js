@@ -7,7 +7,7 @@ import { Pair } from "../models/pairModel.js";
 const createPair = asyncHandler(async (req, res) => {
   const pairData = req.body;
 
-  console.log(pairData);
+  // console.log(pairData);
 
   if (!pairData) {
     throw new ApiError(400, "Pair data is required!");
@@ -44,13 +44,17 @@ const deletePair = asyncHandler(async (req, res) => {
   const { pairID } = req.params;
 
   const searchForPair = await Pair.findById(pairID);
-  console.log(searchForPair);
+
+  // console.log(searchForPair);
+
   if (!searchForPair) {
     throw new ApiError(400, "pairs not found !");
   }
 
   const deletedPair = await Pair.findByIdAndDelete(pairID);
-  console.log(deletePair);
+
+  // console.log(deletePair);
+
   return res.json(
     new ApiResponse(200, deletePair, "Pair deleted successfully !")
   );
@@ -60,7 +64,8 @@ const updatePair = asyncHandler(async (req, res) => {
   const { pairID } = req.params;
   const data = req.body;
 
-  console.log(data);
+  // console.log(data);
+
   const pairExist = await Pair.findById(pairID);
 
   if (!pairExist) {
@@ -74,4 +79,26 @@ const updatePair = asyncHandler(async (req, res) => {
   );
 });
 
-export { createPair, getPairs, deletePair, updatePair };
+const fetchPriceAndVolume = asyncHandler(async (req, res) => {
+  const { pairID } = req.params;
+  const pair = await Pair.findById(pairID);
+
+  if (!pair) {
+    throw new ApiError(400, "Pair is not found !");
+  }
+
+  const { volume, priceChange } = pair;
+
+  // console.log(volume,priceChange)
+
+  return res.json(
+    new ApiResponse(
+      200,
+      "1.0.0",
+      [volume, priceChange],
+      "Price and Volume fetched successfully !"
+    )
+  );
+});
+
+export { createPair, getPairs, deletePair, updatePair, fetchPriceAndVolume };
