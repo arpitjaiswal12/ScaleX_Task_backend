@@ -64,6 +64,10 @@ const updatePair = asyncHandler(async (req, res) => {
   const { pairID } = req.params;
   const data = req.body;
 
+  if(!pairID){
+    throw new ApiError(401,"pairId required  !");
+  }
+
   // console.log(data);
 
   const pairExist = await Pair.findById(pairID);
